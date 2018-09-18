@@ -49,6 +49,21 @@ function smallTextButton()
     smallTextButtonElement.appendChild(smallTextButtonElementText);
     document.body.appendChild(smallTextButtonElement).onclick = function fun()
     {
+        var title = "The Time Is";
+        var body = "test";
+        var imagePath = "";
+        showToastNotification(title, body, imagePath);
+
+    }
+}
+
+function toastTextButton()
+{
+    var toastTextButtonElement = document.createAttribute("button");
+    var toastTextButtonElementText = document.createTextNode("Toast Time");
+    toastTextButtonElement.appendChild(toastTextButtonElementText);
+    document.body.appendChild(toastTextButtonElement).onclick = function fun()
+    {
         document.getElementById("timeSlot").style.fontSize = "small"
         document.getElementById("dateSlot").style.fontSize = "small"
     }

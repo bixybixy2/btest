@@ -5,19 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+
+    <script type="text/javascript" src="jscript.js"></script>
 </head>
 <body>
-    <h1>Oh snap this works better</h1>
+    <h1>Oh snap this works better and in JS</h1>
+    
+    <p id="timeSlot"></p>
+    <p id="dateSlot"></p>
 
- <button type="button" onclick="document.getElementById('demo').innerHTML = Date()">get the time</button>
- <button type="button" onclick="document.getElementById('demo').style.fontSize = '24px'"> Large</button>
- <button type="button" onclick="document.getElementById('demo').style.fontSize = '16px'"> Small</button>
- <p id="demo"></p>
-
-
-
-
-
+    <script>timeButton();
+    smallTextButton();
+    normalTextButton();
+    largeTextButton();
+    </script>
 
  <h2>***</h2>
 </body>

@@ -19,7 +19,6 @@ function displayTime()
     console.log('updated time to:',time);
 }
 
-
 function appToastButton()
 {
     var appToastButtonElement = document.createElement("button");
@@ -35,9 +34,28 @@ function appToastButton()
     }
 }
 
-function webToastButton()
+function webToastButton(nTitle, nBody, nIcon, nImage)
 {
-    var x = document.getElementById("snackbar");
-    x.className = "show";
-    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+    var webToastButtonElement = document.createElement("button");
+    var webToastButtonElementText = document.createTextNode("Web Toast Notification");
+    webToastButtonElement.appendChild(webToastButtonElementText);
+    document.body.appendChild(webToastButtonElement).onclick = function fun()
+    {
+        var options = {
+            title: nTitle,
+            body: nBody,
+            icon: nIcon,
+            image: nImage
+        }
+        var notification = new Notification(nTitle, options)
+    }
+}
+
+function uniButton(isApp = document.URL.indexOf('http') !== 0) 
+{
+    if (isApp === 0) {
+        appToastButton()
+    } else {
+        webToastButton("Hello There!", "[Sample Body Text]","", "https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg?auto=compress&cs=tinysrgb&h=350")
+    }
 }

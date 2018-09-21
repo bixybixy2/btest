@@ -19,35 +19,13 @@ function displayTime()
     console.log('updated time to:',time);
 }
 
-function largeTextButton()
-{
-    var largeTextButtonElement = document.createElement("button");
-    var largeTextButtonElementText = document.createTextNode("Large Font Size");
-    largeTextButtonElement.appendChild(largeTextButtonElementText);
-    document.body.appendChild(largeTextButtonElement).onclick = function fun()
-    {
-        document.getElementById("timeSlot").style.fontSize = "xx-large"
-        document.getElementById("dateSlot").style.fontSize = "xx-large"
-    }
-}
-function normalTextButton()
-{
-    var normalTextButtonElement = document.createElement("button");
-    var normalTextButtonElementText = document.createTextNode("Normal Font Size");
-    normalTextButtonElement.appendChild(normalTextButtonElementText);
-    document.body.appendChild(normalTextButtonElement).onclick = function fun()
-    {
-        document.getElementById("timeSlot").style.fontSize = "medium"
-        document.getElementById("dateSlot").style.fontSize = "medium"
-    }
-}
 
-function smallTextButton()
+function appToastButton()
 {
-    var smallTextButtonElement = document.createElement("button");
-    var smallTextButtonElementText = document.createTextNode("Small Font Size");
-    smallTextButtonElement.appendChild(smallTextButtonElementText);
-    document.body.appendChild(smallTextButtonElement).onclick = function fun()
+    var appToastButtonElement = document.createElement("button");
+    var appToastButtonElementText = document.createTextNode("App Toast Notification");
+    appToastButtonElement.appendChild(appToastButtonElementText);
+    document.body.appendChild(appToastButtonElement).onclick = function fun()
     {
         var title = "The Time Is";
         var body = "test";
@@ -57,14 +35,9 @@ function smallTextButton()
     }
 }
 
-function toastTextButton()
+function webToastButton()
 {
-    var toastTextButtonElement = document.createAttribute("button");
-    var toastTextButtonElementText = document.createTextNode("Toast Time");
-    toastTextButtonElement.appendChild(toastTextButtonElementText);
-    document.body.appendChild(toastTextButtonElement).onclick = function fun()
-    {
-        document.getElementById("timeSlot").style.fontSize = "small"
-        document.getElementById("dateSlot").style.fontSize = "small"
-    }
+    var x = document.getElementById("snackbar");
+    x.className = "show";
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
 }

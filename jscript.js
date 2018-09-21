@@ -57,6 +57,6 @@ function uniButton() {
 if (appCheck == 1) {
     appToastButton()
     } else {
-    webToastButton("Hello There!", "[Sample Body Text]","", "https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg?auto=compress&cs=tinysrgb&h=350")
+    webToastButton("Hello There!", "[Sample Body Text]","https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg?auto=compress&cs=tinysrgb&h=350")
     }  
 }

@@ -28,35 +28,48 @@ function appToastButton()
     {
         var title = "The Time Is";
         var body = "test";
-        var imagePath = "";
-        showToastNotification(title, body, imagePath);
-
-    }
-}
-
-function webToastButton(nTitle, nBody, nIcon, nImage)
-{
-    var webToastButtonElement = document.createElement("button");
-    var webToastButtonElementText = document.createTextNode("Web Toast Notification");
-    webToastButtonElement.appendChild(webToastButtonElementText);
-    document.body.appendChild(webToastButtonElement).onclick = function fun()
-    {
-        var options = {
-            title: nTitle,
-            body: nBody,
-            icon: nIcon,
-            image: nImage
+        var imagePath = "https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg?auto=compress&cs=tinysrgb&h=350";
+        if (window.Windows)
+        {
+            
+            showToastNotification(title, body, imagePath);
         }
-        var notification = new Notification(nTitle, options)
+        else
+        {
+            var options = {
+                title: title,
+                body: body,
+                icon: "",
+                image: imagePath
+            }
+            var notification = new Notification(title, options)
+        }
     }
 }
 
-var appCheck = window.matchMedia('(display-mode: standalone)').matches
+// function webToastButton(nTitle, nBody, nIcon, nImage)
+// {
+//     var webToastButtonElement = document.createElement("button");
+//     var webToastButtonElementText = document.createTextNode("Web Toast Notification");
+//     webToastButtonElement.appendChild(webToastButtonElementText);
+//     document.body.appendChild(webToastButtonElement).onclick = function fun()
+//     {
+//         var options = {
+//             title: nTitle,
+//             body: nBody,
+//             icon: nIcon,
+//             image: nImage
+//         }
+//         var notification = new Notification(nTitle, options)
+//     }
+// }
 
-function uniButton() {
-if (appCheck == 1) {
-    appToastButton()
-    } else {
-    webToastButton("Hello There!", "[Sample Body Text]","https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg?auto=compress&cs=tinysrgb&h=350")
-    }  
-}
+// var appCheck = window.matchMedia('(display-mode: standalone)').matches
+
+// function uniButton() {
+// if (appCheck == 1) {
+//     appToastButton()
+//     } else {
+//     webToastButton("Hello There!", "[Sample Body Text]","https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg?auto=compress&cs=tinysrgb&h=350")
+//     }  
+// }
